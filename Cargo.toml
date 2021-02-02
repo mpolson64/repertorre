@@ -1,0 +1,9 @@
+[package]
+name = "repertorre"
+version = "0.1.0"
+authors = ["Miles Olson <mpolson64@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
