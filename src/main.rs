@@ -1,4 +1,14 @@
+#[macro_use]
+extern crate diesel;
+#[macro_use]
+extern crate diesel_migrations;
+
 use clap::{App, Arg};
+
+pub mod schema;
+pub mod models;
+
+pub mod ingestion;
 
 fn main() {
     let matches = App::new("Repertorre")
@@ -35,7 +45,7 @@ fn main() {
         let db_name = matches.value_of("DB").unwrap();
         let pgn_name = matches.value_of("PGN").unwrap();
 
-        println!("Ingesting {} into {}", pgn_name, db_name);
+        ingestion::ingest(db_name, pgn_name);
     } else if let Some(matches) = matches.subcommand_matches("export") {
         let db_name = matches.value_of("DB").unwrap();
 

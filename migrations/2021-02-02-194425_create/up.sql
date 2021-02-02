@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS positions (
+  id INTEGER PRIMARY KEY,
+  fen VARCHAR NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS moves (
+  id INTEGER PRIMARY KEY,
+  san VARCHAR NOT NULL,
+  from_id INTEGER NOT NULL,
+  to_id INTEGER NOT NULL,
+  FOREIGN KEY (from_id) REFERENCES positions(id)
+  FOREIGN KEY (to_id) REFERENCES positions(id)
+)

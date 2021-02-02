@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 clap = "3.0.0-beta.2"
+diesel = { version = "*", default-features = false, features = ["sqlite"] }
+diesel_migrations = "1.4.0"
